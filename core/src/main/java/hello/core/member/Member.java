@@ -27,7 +27,7 @@ public class Member {
         return grade;
     }
 
-    public void setDrade(Grade grade) {
+    public void setGrade(Grade grade) {
         this.grade = grade;
     }
 
