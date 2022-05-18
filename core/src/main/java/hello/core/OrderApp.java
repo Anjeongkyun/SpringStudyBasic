@@ -1,12 +1,12 @@
 package hello.core;
 
-import hello.core.discount.order.Order;
-import hello.core.discount.order.OrderService;
-import hello.core.discount.order.OrderServiceImpl;
+import hello.core.order.OrderService;
+import hello.core.order.OrderServiceImpl;
 import hello.core.member.Grade;
 import hello.core.member.Member;
 import hello.core.member.MemberService;
 import hello.core.member.MemberServiceImpl;
+import hello.core.order.Order;
 
 public class OrderApp {
 
