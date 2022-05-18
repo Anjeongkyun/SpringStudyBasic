@@ -12,15 +12,13 @@ public class OrderServiceImpl implements OrderService{
 
     private final MemberRepository memberRepository = new MemoryMemberRespository();
 //    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
-    private final DiscountPolicy rateDiscountPolicy = new RateDiscountPolicy();
-    DiscountPolicyImpl discountPolicyImpl = new DiscountPolicyImpl();
+//    private final DiscountPolicy rateDiscountPolicy = new RateDiscountPolicy();
     private DiscountPolicy discountPolicy;
 
     @Override
     public Order craeteOrder(Long memberId, String itemName, int itemPrice) {
-        discountPolicyImpl.setDiscountPolicy(rateDiscountPolicy);
         Member member = memberRepository.findById(memberId);
-        int discountPrice = discountPolicyImpl.discount(member, itemPrice);
+        int discountPrice = discountPolicy.discount(member, itemPrice);
 
         return new Order(memberId,itemName, itemPrice, discountPrice);
     }
