@@ -10,10 +10,14 @@ import hello.core.member.MemoryMemberRespository;
 
 public class OrderServiceImpl implements OrderService{
 
-    private final MemberRepository memberRepository = new MemoryMemberRespository();
-//    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
-//    private final DiscountPolicy rateDiscountPolicy = new RateDiscountPolicy();
+    private final MemberRepository memberRepository;
     private DiscountPolicy discountPolicy;
+
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
+
 
     @Override
     public Order craeteOrder(Long memberId, String itemName, int itemPrice) {
