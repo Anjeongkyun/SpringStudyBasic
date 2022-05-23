@@ -33,7 +33,7 @@ public class ApplicationSameBeanFindTest {
         MemberRepository memberRepository = ac.getBean("memberRepository1",MemberRepository.class);
         Assertions.assertThat(memberRepository).isInstanceOf(MemberRepository.class);
     }
-    
+
 
     @Configuration
     static class SameBeanConfig {
