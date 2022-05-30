@@ -1,4 +1,4 @@
-package hello.core.scan;
+package hello.core.annotation;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 
